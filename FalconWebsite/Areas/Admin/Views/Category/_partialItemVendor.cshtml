@@ -1,0 +1,92 @@
+﻿<div id="_partialVendorItems">
+    
+    <div class="container">
+        <form class="col-md-6 col-md-offset-2" id="vendorCrud">
+            <div class="form-group row">
+                <span for="lgFormGroupInput" class="col-sm-4">Vendor Name</span>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control " name="vendorname" data-bind="textInput: vendorName" placeholder="Nike">
+                </div>
+            </div>
+            <div class="form-group row">
+                <span for="exampleTextarea" class="col-sm-4">Vendor Description</span>
+                <div class="col-sm-8">
+                    <textarea class="form-control" name="vendorDesc" data-bind="textInput: vendorDescription" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <span for="smFormGroupInput" class="col-sm-4">Vendor Url</span>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control " name="vendorUrl" data-bind="textInput: vendorUrl" placeholder="you@example.com">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="text-center">
+                    <button data-bind="click: vendorAddClick" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </form>
+        
+        <div style="height: 335px; overflow: auto; width: 100%">
+            @* Table to display the list of Sub Category *@
+            <table id="acrylic" class="table-responsive" align="center">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Vendor Name</th>
+                    <th>Vendor Description</th>
+                    <th>Added By</th>
+                    <th>Added On</th>
+                    <th>Updated By</th>
+                    <th>Updated on</th>
+                    <th>Active</th>
+                    <th>Deleted By</th>
+                    <th>Deleted On</th>
+                    <th align="center" title="Action"><i class="glyphicon glyphicon-cog"></i></th>
+                </tr>
+                </thead>
+                <tbody data-bind="foreach: responseData">
+                <tr>
+                    <td data-bind="text: vendorId"></td>
+                    <td data-bind="text: vendorName"></td>
+                    <td data-bind="text: vendorDescription"></td>
+                    <td><a href="#"><span data-bind="text: addedBy.firstName + ' ' + addedBy.lastName"></span></a></td>
+                    <td class="text-center"><span data-bind="text: addedOn != null ? addedDateString : 'N/A'"></span></td>
+                    <td class="text-center"><a href="#"><span data-bind="text: (updatedBy.firstName!=null ? updatedBy.firstName : ' ') + ' ' + (updatedBy.lastName != null ? updatedBy.lastName: ' ')"></span></a></td>
+                    <td class="text-center" data-bind="text: updateOn != null ? updatedDateString : 'N/A'"></td>
+                    <td>
+
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button disabled type="button" class="btn" data-bind="css: { 'btn-primary' : isDeleted , 'btn-secondary' :  isDeleted != true}">Yes</button>
+                            <button disabled type="button" class="btn" data-bind="css: { 'btn-danger': isDeleted != true , 'btn-secondary' :  isDeleted}">No</button>
+                        </div>
+
+                    </td>
+                    <td class="text-center"><a href="#"><span data-bind="text: (deletedBy.firstName!=null ? deletedBy.firstName : ' ') + ' ' + (deletedBy.lastName != null ? deletedBy.lastName: ' ')"></span></a></td>
+                    <td class="text-center" data-bind="text: deletedOn != null ? DeleteDateString : 'N/A'"></td>
+                    <td align="center">
+                        <a class="btn btn-default glyphicon glyphicon-pencil" title="Edit Color" data-bind="attr: { id: vendorId}, click: $root.editColorById"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-trash popover-top" title="Delete Color" data-toggle="popover" data-bind="popover: { contentHtmlId: 'popover-html', title: 'DeleteColor', html: true }, attr: { id: vendorId} ,  click: $root.DeleteColor"></a>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="row text-center">
+            <ul class="pagination hidden-xs" data-bind="foreach: pagination">
+                <li>
+                    <a style="cursor: pointer;" data-bind="text: pageNo, css:{'btn btn-default btn-on-1 active' : pageNo == $root.currentPage()}, attr: { id: pageNo}, click: $root.paginationClick"></a>
+                </li>
+            </ul>
+            <ul class="pagination visible-xs pull-right">
+                <li><a href=""><i class="glyphicon glyphicon-chevron-left"></i></a></li>
+                <li><a href=""><i class="glyphicon glyphicon-chevron-right"></i></a></li>
+            </ul>
+        </div>
+        
+
+    </div>
+</div>
+<script src="~/js/KnockoutViewModel/itemVendorViewModel.js"></script>

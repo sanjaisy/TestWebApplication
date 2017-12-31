@@ -1,0 +1,78 @@
+﻿.oxy-button-fab__badge[data-badge]:after {
+    color: #448aff;
+    background: #fff;
+    top: 8px;
+    right: 8px;
+    -webkit-transform: scale(.8);
+    transform: scale(.8);
+    width: 18px;
+    height: 18px;
+}
+
+style.min.css:1 .mdl-badge[data-badge]:after {
+    content: attr(data-badge);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    align-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    position: absolute;
+    top: -11px;
+    right: -24px;
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #448aff;
+    color: #fff;
+}
+
+.mdl-button--fab .mdl-button__ripple-container {
+    border-radius: 50%;
+    -webkit-mask-image: -webkit-radial-gradient(circle,#fff,#000);
+}
+
+style.min.css:1 .mdl-button__ripple-container {
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(1, 1);
+    }
+
+    to {
+        -webkit-transform: scale(1.5, 1.5);
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(1, 1);
+    }
+
+    to {
+        transform: scale(1.5, 1.5);
+    }
+}
+
+.carousel-inner .item > img {
+    -webkit-animation: zoom 20s;
+    animation: zoom 20s;
+}

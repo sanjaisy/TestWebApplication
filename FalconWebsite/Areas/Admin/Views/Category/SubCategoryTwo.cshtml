@@ -1,0 +1,216 @@
+
+@{
+    ViewData["Title"] = "SubCategoryTwo";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div id="page-wrapper">
+    <div id="subCategorytwoMain">
+        <div id="LoadingImage" class="centeredImage" style='display: none;'>
+            <img src="~/images/loading.gif" />
+        </div>
+
+        <div class="oaerror danger" data-bind="visible: Error">
+            <strong>Error : </strong> - <span data-bind="text: message"></span>
+        </div>
+
+        <div class="oaerror success" data-bind="visible: Success">
+            <strong>Success : </strong> - <span data-bind="text: message"></span>
+        </div>
+        <br />
+       
+    <div class="mdl-grid">
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-cell mdl-cell--12-col">
+            @* Table to display the list of Sub Category *@
+            <table id="acrylic" class="table-responsive">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Sub Category</th>
+                        <th>Image</th>
+                        <th>Added On</th>
+                        <th>Added By</th>
+                        <th>Active</th>
+                        <th>Updated By</th>
+                        <th>Updated On</th>
+                        <th align="center" title="Action"><i class="glyphicon glyphicon-cog"></i></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: responseData">
+                    <tr>
+                        <td data-bind="text : id"></td>
+                        <td data-bind="text : subCatTwoName"></td>
+                        <td data-bind="text :category.categoryName"></td>
+                        <td data-bind="text : subCatOne.subCatOneName"></td>
+                        <td><a data-bind="attr:{href: pictureUrl!= null ? pictureUrl: '/images/finalLogo.png' , target:'_blank'}"><img width="106px" height="106px" data-bind="attr:{src: pictureUrl!= null ? pictureUrl : '/images/finalLogo.png'}" /></a></td>
+                        <td class="text-center"><span data-bind="text: addedOn != null ? addedDateString : 'N/A'"></span></td>
+                        <td><a href="#"><span data-bind="text: addedBy.firstName + ' ' + addedBy.lastName"></span></a></td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button disabled type="button" class="btn" data-bind="css: { 'btn-primary' : active , 'btn-secondary' :  active != true}">Yes</button>
+                                <button disabled type="button" class="btn" data-bind="css: { 'btn-danger': active != true , 'btn-secondary' :  active}">No</button>
+                            </div>
+                        </td>
+                        <td class="text-center"><a href="#"><span data-bind="text: (updated_By.firstName!=null ? updated_By.firstName : ' ') + ' ' + (updated_By.lastName != null ? updated_By.lastName: ' ')"></span></a></td>
+                        <td data-bind="text: updatedOn != null ? updatedDateString : 'N/A'"></td>
+                        <td align="center">
+                            <a class="btn btn-default glyphicon glyphicon-pencil" title="Edit Category" data-bind="attr: { id: id} , click: $root.GetSubCategoryById"></a>
+                            <a class="btn btn-danger glyphicon glyphicon-trash" title="Delete Category" data-bind="attr: { id: id}, , click: $root.DeleteSubCategory"></a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            @* Pagination *@
+            <div class="row text-center">
+                <ul class="pagination hidden-xs" data-bind="foreach: pagination">
+                    <li>
+                        <a style="cursor: pointer;" data-bind="text: pageNo, css:{'btn btn-default btn-on-1 active' : pageNo == $root.currentPage()}, attr: { id: pageNo}, click: $root.paginationClick"></a>
+                    </li>
+                </ul>
+                <ul class="pagination visible-xs pull-right">
+                    <li><a href=""><i class="glyphicon glyphicon-chevron-left"></i></a></li>
+                    <li><a href=""><i class="glyphicon glyphicon-chevron-right"></i></a></li>
+                </ul>
+            </div>
+
+
+        </div>
+        <div class="mdl-layout-spacer"></div>
+    </div>
+
+        @* Add Edit Sub Category *@
+        <div class="modal fade" id="addEditSubCategorytwoModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header modal-header-primary">
+                        <h5 class="modal-title" style="top: 10px;position: relative;">Add Sub Category</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="bottom: 9px;position: relative;">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="oaerror danger" data-bind="visible: EditError">
+                            <strong>Error : </strong> - <span data-bind="text: message"></span>
+                        </div>
+
+                        <form class="form-horizontal" id="SubCategorytwoValidation">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Sub Category Name</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="SubCategorytwoName" data-bind="textinput: subCatTwoName" class="form-control" placeholder="Enter Sub Category Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Category Name</label>
+                                <div class="col-sm-8">
+                                    <select name="categoryName" class="selectpicker" data-live-search="true" data-bind="selectPicker:true, options:categoryResponseData, value:selectCategory,optionsText:'categoryName',optionsValue:'categoryId', optionsCaption: ' ---Select Category---'"></select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Sub Category One</label>
+                                <div class="col-sm-8">
+                                    <select name="SubCategoryoneName" class="selectpicker" data-live-search="true" data-bind="selectPicker:true, options:subCategoryByCategoryId, value:selectCategoryOne,optionsText:'subCatOneName',optionsValue:'subCategoryOneId', optionsCaption: ' ---Select Sub Category---'"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Image</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <!-- image-preview-filename input [CUT FROM HERE]-->
+                                        <div class="input-group image-preview">
+                                            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                            <span class="input-group-btn">
+                                                <!-- image-preview-clear button -->
+                                                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                    <span class="glyphicon glyphicon-remove"></span> Clear
+                                                </button>
+                                                <!-- image-preview-input -->
+                                                <div class="btn btn-default image-preview-input">
+                                                    <span class="glyphicon glyphicon-folder-open"></span>
+                                                    <input type="file" id="subCatFile" name="subCatFile" /> <!-- rename it -->
+                                                </div>
+                                            </span>
+                                        </div><!-- /input-group image-preview [TO HERE]-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Active</label>
+                                <div class="col-sm-8">
+                                    <input data-bind="bootstrapToggleOn: active" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="primary" data-offstyle="danger" type="checkbox">
+                                </div>
+                            </div>
+                        </form>
+
+                        <div id="LoadingImageAddEdit" class="centeredImage" style='display: none'>
+                            <img src="~/images/loading.gif" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-bind="click: AddEditSubCategorytwo">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* Delete Sub Category *@
+        <div class="modal fade" id="DeleteSubCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header modal-header-primary">
+                        <h5 class="modal-title" style="top: 10px;position: relative;">Delete Sub Category</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="bottom: 9px;position: relative;">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="LoadingImagedeleteCat" class="centeredImage" style='display:none'>
+                            <img src="~/images/loading.gif" />
+                        </div>
+
+                        Are you Sure you want to delete this Item ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-danger" data-bind="click: confirmDeleteSubCategory">yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        @* Floating Add button *@
+        @*<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" style="bottom: 20px; position: fixed; right: 20px;" data-bind="click: subCategorytwoAddButton" title="Add Sub Category" data-placement="top">
+            <i class="glyphicon glyphicon-plus">
+            </i>
+        </button>*@
+        <div class="floaty" style="position: fixed;">
+            <ul class="floaty-list">
+                <li class="floaty-list-item floaty-list-item--blue">
+                    <span class="floaty-list-item-label">Report</span>
+                    <span class="glyphicon glyphicon-list-alt" style="left: 12px; top: 12px;"></span>
+                </li>
+                <li class="floaty-list-item floaty-list-item--yellow" data-bind="click: subCategorytwoAddButton">
+                    <span class="floaty-list-item-label">Add Category</span>
+                    <span class="glyphicon glyphicon-plus" style="left: 14px; top: 12px;"></span>
+                </li>
+            </ul>
+            <div class="btn btn-primary btn-circle btn-lg ">
+                <i class="glyphicon glyphicon-align-justify" style="right: 2px; top: 4px;">
+                </i>
+
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+<script src="~/js/KnockoutViewModel/SubCategoryTwoViewModel.js"></script>

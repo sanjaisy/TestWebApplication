@@ -1,0 +1,217 @@
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LayoutAdminLogin.cshtml";
+}
+
+<!-- Full Page Image Background Carousel Header -->
+<header id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for Slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <!-- Set the first background image using inline CSS below. -->
+            <div class="fill">
+                <img src="~/images/image1.jpg" class="img-responsive" />
+            </div>
+            <div class="carousel-caption">
+                <h2>Caption 1</h2>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the second background image using inline CSS below. -->
+            <div class="fill">
+                <img src="~/images/image2.jpg" class="img-responsive" />
+            </div>
+            <div class="carousel-caption">
+                <h2>Caption 2</h2>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the third background image using inline CSS below. -->
+            <div class="fill">
+                <img src="~/images/image4.jpg" class="img-responsive" />
+            </div>
+            <div class="carousel-caption">
+                <h2>Caption 3</h2>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+
+</header>
+
+<div class="centerDiv" id="loginRegAuth">
+
+    <div id="loginbox" class="mainbox col-md-3 col-md-offset-4 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Sign In</div>
+                <div style="float: right; font-size: 80%; position: relative; top: -10px">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </div>
+            <div style="padding-top: 30px" class="panel-body">
+
+                <form id="loginAuthentication" class="form-horizontal" role="form">
+                    <div class="text-center alert-danger" data-bind="text: loginErrorCode, visible: IsSuccess,css:IsSuccess() ==true ? 'successMsg' :'error'"></div>
+                    <br />
+                    <div style="margin-bottom: 25px" class="input-group ">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                        <input type="text" class="form-control" name="email" data-bind="textInput: UserName" placeholder="username or email">
+                    </div>
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="login-password" type="password" class="form-control" name="password" placeholder="password" data-bind="textInput: Password">
+                    </div>
+
+                    <div class="input-group text-center">
+                        <div class="checkbox center-block text-center">
+                            <label>
+                                <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 10px" class="form-group">
+                        <!-- Button -->
+                        <div class="col-sm-12 controls btn-group col-md-12 col-lg-push-1 center-block text-center">
+                            <button id="btn-login" class="btn btn-success" data-bind="click: GetLoginAuthentication , disable :IsBtnShow ">
+                                <span data-bind="visible: IsSuccess">Login</span>
+                                <span data-bind="visible: IsBtnShow">
+                                    <i class="fa fa-circle-o-notch fa-spin"></i> Loading
+                                </span>
+                            </button>
+                            <a id="btn-fblogin" href="#" class="btn btn-primary"><span class="fa fa-facebook"></span>  Login with Facebook</a>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12 control ">
+                            <div class="btn-group center-block text-center">
+                                <a class="btn btn-info">&nbsp;&nbsp;<i class="glyphicon glyphicon-user"></i>&nbsp;Continue as Guest</a>
+                                <a class="btn btn-default" onClick="$('#loginbox').hide();$('#signupbox').show()">
+                                    &nbsp; &nbsp; Sign Up &nbsp; &nbsp;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div id="signupbox" style="display: none; margin-top: 50px" class="mainbox col-md-5 col-md-offset-4 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Sign Up</div>
+                <div style="float: right; font-size: 85%; position: relative; top: -28px">
+                    <a id="signinlink" class="btn btn-default" onclick="$('#signupbox').hide();$('#loginbox').show()">Sign In</a>
+                </div>
+            </div>
+            <div class="panel-body">
+                <form id="signupform" class="form-horizontal" role="form">
+
+                    <div id="signupalert" style="display: none" class="alert alert-danger">
+                        <p>Error:</p>
+                        <span></span>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="email" class="col-md-4 control-label">User Name</label>
+                        <div class="col-md-8">
+                            <input type="text" id="email" data-bind="textInput: UserName" class="form-control" name="email" placeholder="User Name or Email">
+                            <span data-bind="visible: IsBtnShow">
+                                <i class="fa fa-circle-o-notch fa-spin"></i> Checking ... 
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="firstname" class="col-md-4 control-label">First Name</label>
+                        <div class="col-md-8">
+                            <input type="text" data-bind="textInput: FirstName" class="form-control" name="firstname" placeholder="First Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname" class="col-md-4 control-label">Last Name</label>
+                        <div class="col-md-8">
+                            <input type="text" data-bind="textInput: LastName" class="form-control" name="lastname" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-md-4 control-label">Password</label>
+                        <div class="col-md-8">
+                            <input type="password" data-bind="textInput: Password" class="form-control" name="password" id="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-md-4 control-label">Confirm Password</label>
+                        <div class="col-md-8">
+                            <input type="password" class="form-control" name="confirmpassword" placeholder="Password">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="icode" class="col-md-4 control-label">Phone</label>
+                        <div class="col-md-8">
+                            <div style="margin-bottom: 25px" class="input-group ">
+                                <div class="input-group-addon">
+                                    <img src="~/images/nepallogo.png" />
+                                </div>
+                                <input type="text" class="form-control" name="phone" data-bind="textInput: Phone" id="phonenumber" placeholder="+977-9998887776">
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    
+
+
+                    <div style="border-top: 1px solid #999; padding-top: 20px" class="form-group">
+                        <div style="margin-top: 10px" class="form-group">
+                            <!-- Button -->
+                            <div class="col-sm-12 col-md-offset-3">
+                                <button id="btn-signup" type="button" class="btn btn-info" data-bind="click: RegisterUserClick"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                                <span style="margin-left: 8px;">or</span>
+                                <button id="btn-fbsignup" style="margin-left: 8px;" type="button" class="btn btn-primary"><span class="fa fa-facebook"></span>  Login with Facebook</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<script src="~/js/KnockoutViewModel/LoginAuthentication.js"></script>
+
+

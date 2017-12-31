@@ -1,0 +1,791 @@
+@{
+    ViewData["Title"] = "SingleItem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/ProjectCss/HomePageCustomeCss.css" rel="stylesheet" />
+
+<script src="~/js/ProjectJquery/SingleItemJquery.js"></script>
+<link href="~/css/ProjectCss/SinglePageCustomeCss.css" rel="stylesheet" />
+
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+        <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
+            <div class='carousel-outer'>
+                <!-- me art lab slider -->
+                <div class='carousel-inner '>
+                    <div class='item active'>
+                        <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/print/image1xxl.jpg' alt='' id="zoom_05" data-zoom-image="http://images.asos-media.com/inv/media/8/2/3/3/5313328/print/image1xxl.jpg" />
+                    </div>
+                    <div class='item' id="zoom_05">
+                        <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image2xxl.jpg' alt='' data-zoom-image="http://images.asos-media.com/inv/media/8/2/3/3/5313328/image2xxl.jpg" />
+                    </div>
+                    <div class='item'>
+                        <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image3xxl.jpg' alt='' data-zoom-image="http://images.asos-media.com/inv/media/8/2/3/3/5313328/image3xxl.jpg" />
+                    </div>
+
+                    <div class='item'>
+                        <img src='http://images.asos-media.com/inv/media/3/6/7/0/4850763/multi/image1xxl.jpg' alt='' data-zoom-image="http://images.asos-media.com/inv/media/3/6/7/0/4850763/multi/image1xxl.jpg" id="zoom_05" />
+                    </div>
+                    <div class='item'>
+                        <img src='http://images.asos-media.com/inv/media/5/2/1/3/4603125/gold/image1xxl.jpg' alt='' data-zoom-image="http://images.asos-media.com/inv/media/5/2/1/3/4603125/gold/image1xxl.jpg" id="zoom_05" />
+                    </div>
+                    <div class='item'>
+                        <img src='http://images.asos-media.com/inv/media/5/3/6/8/4948635/mink/image1xxl.jpg' alt='' data-zoom-image="http://images.asos-media.com/inv/media/5/3/6/8/4948635/mink/image1xxl.jpg" id="zoom_05" />
+                    </div>
+
+                    <script>
+                        $("#zoom_05").elevateZoom({ zoomType: "inner", cursor: "crosshair" });
+                    </script>
+                </div>
+
+                <!-- sag sol -->
+                <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
+                    <span class='glyphicon glyphicon-chevron-left'></span>
+                </a>
+                <a class='right carousel-control' href='#carousel-custom' data-slide='next'>
+                    <span class='glyphicon glyphicon-chevron-right'></span>
+                </a>
+            </div>
+
+            <!-- thumb -->
+            <ol class='carousel-indicators mCustomScrollbar meartlab'>
+                <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/print/image1xxl.jpg' alt='' /></li>
+                <li data-target='#carousel-custom' data-slide-to='1'><img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image2xxl.jpg' alt='' /></li>
+                <li data-target='#carousel-custom' data-slide-to='2'><img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image3xxl.jpg' alt='' /></li>
+                <li data-target='#carousel-custom' data-slide-to='3'><img src='http://images.asos-media.com/inv/media/3/6/7/0/4850763/multi/image1xxl.jpg' alt='' /></li>
+                <li data-target='#carousel-custom' data-slide-to='4'><img src='http://images.asos-media.com/inv/media/5/2/1/3/4603125/gold/image1xxl.jpg' alt='' /></li>
+                <li data-target='#carousel-custom' data-slide-to='5'><img src='http://images.asos-media.com/inv/media/5/3/6/8/4948635/mink/image1xxl.jpg' alt='' /></li>
+
+            </ol>
+        </div>
+
+
+    </div>
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+        <h1 class="mdl-typography--display-1">Green Fancy Top</h1>
+        <p class="mdl-typography--display-1 mdl-typography--font-light">
+            <span style="color: rgb(63, 81, 181);">Npr-429 </span><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+        </p>
+        <div>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star-empty"></span>
+        </div>
+
+        <div class="mdl-card__actions text-center">
+
+            <span class="pull-left">
+                <span class="mdl-chip mdl-chip--contact">
+                    <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">122</span>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">remove_red_eye</i></button>
+                </span>
+            </span>
+            <span class="mdl-chip mdl-chip--contact">
+                <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+            </span>
+
+            <button id="shareAll"
+                    class="mdl-button mdl-js-button mdl-button--icon pull-right">
+                <i class="material-icons">share</i>
+            </button>
+
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                for="shareAll">
+                <li class="mdl-menu__item">Some Action</li>
+                <li class="mdl-menu__item">Another Action</li>
+                <li disabled class="mdl-menu__item">Disabled Action</li>
+                <li class="mdl-menu__item">Yet Another Action</li>
+            </ul>
+
+
+        </div>
+
+
+
+        <p class="mdl-typography--title mdl-typography--font-light">
+            Material Design Lite is a light-weight implementation of design, specifically crafted for the web.
+            For more detailed guidelines and specifications for other platforms please refer to the Material Design site.
+            Thats the spirit of material design. Get started now.
+        </p>
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fullwidth">
+                    <input class="mdl-textfield__input" type="text" id="sample1" value="Small" readonly tabIndex="-1">
+                    <label for="sample1" class="mdl-textfield__label">Size</label>
+                    <ul for="sample1" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                        <li class="mdl-menu__item">Small</li>
+                        <li class="mdl-menu__item">Medium</li>
+                        <li class="mdl-menu__item">Large</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                <div class="mdl-list__item-secondary-action">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fullwidth">
+                        <input class="mdl-textfield__input" type="text" id="sample2" value="Red" readonly tabIndex="-1">
+                        <label for="sample1" class="mdl-textfield__label">Color</label>
+                        <ul for="sample2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                            <li class="mdl-menu__item">Red</li>
+                            <li class="mdl-menu__item">Green</li>
+                            <li class="mdl-menu__item">White</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-grid mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--12-col-phone">
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--1-col-tablet mdl-cell--1-col-phone">
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                        <i class="material-icons">remove</i>
+                    </button>
+
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--2-col-phone">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                        <label class="mdl-textfield__label" for="sample4">Quantity</label>
+                        <span class="mdl-textfield__error">Input is not a number!</span>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--1-col-tablet mdl-cell--1-col-phone">
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                        <i class="material-icons">add</i>
+                    </button>
+
+                </div>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" data-upgraded=",MaterialButton">Add to cart</button>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--6-col mdl-cell mdl-cell--4-col-tablet mdl-cell mdl-cell--2-col-phone mdl-cell--middle">
+                <div class="oxy-product-details__meta">
+                    <span>Category: <a href="shop.html" rel="tag">Bags</a></span> <span>
+                        Tags: <a href="shop.html" rel="tag">summer</a>,
+                        <a href="shop.html" rel="tag">womens</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="mdl-grid mdl-grid--no-fullwidth">
+    <div class="mdl-cell mdl-cell--12-col">
+        <div class="tabbable-line" id="myTabs">
+            <ul class="nav nav-tabs ">
+                <li role="presentation" class="active">
+                    <a class="mdl-tabs__tab" href="#tab_size" role="tab" data-toggle="tab">
+                        Description
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a class="mdl-tabs__tab" href="@Url.Action("PartialItemColor", "Category")" data-target="#tab_color" role="tab" data-toggle="tab">
+
+                        Reviews (2)
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a class="mdl-tabs__tab" href="#tab_type" role="tab" data-toggle="tab">
+                        Additional Information
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a class="mdl-tabs__tab" href="#tab_gender" role="tab" data-toggle="tab">
+                        Custom
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="tab_size">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos repellat sequi modi consequuntur eaque accusamus excepturi deserunt quaerat, ullam ea amet corrupti aliquam voluptatibus, magni est, qui. Aspernatur, reprehenderit rem.
+                    </p>
+
+
+                </div>
+                <div class="tab-pane" id="tab_type">
+
+                    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                        <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric">Material</th>
+                                <th>Quantity</th>
+                                <th>Unit price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+                                <td>25</td>
+                                <td>$2.90</td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+                                <td>50</td>
+                                <td>$1.25</td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+                                <td>10</td>
+                                <td>$2.35</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="tab-pane" id="tab_color">
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--6-col">
+
+
+                            <h4 class="mdl-typography--title">2 Reviews for Green Fancy Top</h4>
+                            <ul class="demo-list-three mdl-list">
+                                <li class="mdl-list__item mdl-list__item--three-line">
+                                    <span class="mdl-list__item-primary-content">
+                                        <i class="material-icons mdl-list__item-avatar">person</i>
+                                        <span>Bryan Cranston</span><br />
+                                        <span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                        </span>
+                                        <span class="mdl-list__item-text-body">
+                                            Bryan Cranston played the role of Walter in Breaking Bad. He is also known
+                                            for playing Hal in Malcom in the Middle.
+                                        </span>
+                                    </span>
+
+                                </li>
+                                <li class="mdl-list__item mdl-list__item--three-line">
+                                    <span class="mdl-list__item-primary-content">
+                                        <i class="material-icons  mdl-list__item-avatar">person</i>
+                                        <span>Aaron Paul</span><br />
+                                        <span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                        </span>
+                                        <span class="mdl-list__item-text-body">
+                                            Aaron Paul played the role of Jesse in Breaking Bad. He also featured in
+                                            the "Need For Speed" Movie.
+                                        </span>
+                                    </span>
+
+                                </li>
+                                <li class="mdl-list__item mdl-list__item--three-line">
+                                    <span class="mdl-list__item-primary-content">
+                                        <i class="material-icons  mdl-list__item-avatar">person</i>
+                                        <span>Bob Odenkirk</span><br />
+                                        <span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                        </span>
+                                        <span class="mdl-list__item-text-body">
+                                            Bob Odinkrik played the role of Saul in Breaking Bad. Due to public fondness for the
+                                            character, Bob stars in his own show now, called "Better Call Saul".
+                                        </span>
+                                    </span>
+
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <div class="container">
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="rating-block">
+                                            <h4>Average user rating</h4>
+                                            <h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
+                                            <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h4>Rating breakdown</h4>
+                                        <div class="pull-left">
+                                            <div class="pull-left" style="width:35px; line-height:1;">
+                                                <div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
+                                            </div>
+                                            <div class="pull-left" style="width:180px;">
+                                                <div class="progress" style="height:9px; margin:8px 0;">
+                                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
+                                                        <span class="sr-only">80% Complete (danger)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pull-right" style="margin-left:10px;">1</div>
+                                        </div>
+                                        <div class="pull-left">
+                                            <div class="pull-left" style="width:35px; line-height:1;">
+                                                <div style="height:9px; margin:5px 0;">4 <span class="glyphicon glyphicon-star"></span></div>
+                                            </div>
+                                            <div class="pull-left" style="width:180px;">
+                                                <div class="progress" style="height:9px; margin:8px 0;">
+                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
+                                                        <span class="sr-only">80% Complete (danger)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pull-right" style="margin-left:10px;">1</div>
+                                        </div>
+                                        <div class="pull-left">
+                                            <div class="pull-left" style="width:35px; line-height:1;">
+                                                <div style="height:9px; margin:5px 0;">3 <span class="glyphicon glyphicon-star"></span></div>
+                                            </div>
+                                            <div class="pull-left" style="width:180px;">
+                                                <div class="progress" style="height:9px; margin:8px 0;">
+                                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
+                                                        <span class="sr-only">80% Complete (danger)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pull-right" style="margin-left:10px;">0</div>
+                                        </div>
+                                        <div class="pull-left">
+                                            <div class="pull-left" style="width:35px; line-height:1;">
+                                                <div style="height:9px; margin:5px 0;">2 <span class="glyphicon glyphicon-star"></span></div>
+                                            </div>
+                                            <div class="pull-left" style="width:180px;">
+                                                <div class="progress" style="height:9px; margin:8px 0;">
+                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
+                                                        <span class="sr-only">80% Complete (danger)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pull-right" style="margin-left:10px;">0</div>
+                                        </div>
+                                        <div class="pull-left">
+                                            <div class="pull-left" style="width:35px; line-height:1;">
+                                                <div style="height:9px; margin:5px 0;">1 <span class="glyphicon glyphicon-star"></span></div>
+                                            </div>
+                                            <div class="pull-left" style="width:180px;">
+                                                <div class="progress" style="height:9px; margin:8px 0;">
+                                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
+                                                        <span class="sr-only">80% Complete (danger)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pull-right" style="margin-left:10px;">0</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4 class="mdl-typography--title">Add a review</h4>
+                            <p>We would love to hear from you, feel free to leave your review.</p><p>Your rating:</p>
+                            <div id="stars-existing" class="starrr" data-rating='4'></div>
+                            <form>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" id="sample3" rows="4">
+                                    <label class="mdl-textfield__label" for="sample3">Add your review here ...</label>
+                                </div>
+
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" data-upgraded=",MaterialButton">Add Review</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab_gender">
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos repellat sequi modi consequuntur eaque accusamus excepturi deserunt quaerat, ullam ea amet corrupti aliquam voluptatibus, magni est, qui. Aspernatur, reprehenderit rem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mdl-card mdl-cell mdl-shadow--2dp" style="width: 99%">
+    <div class="text-center">
+        <h3>Related Product
+            &nbsp;
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect ">
+                VIEW ALL
+            </button>
+        </h3>
+
+        <hr class="star-primary">
+    </div>
+
+    <div class="mdl-grid">
+        <div class="mdl-card mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+            <figure class="mdl-card__media">
+                <a asp-controller="SingleItem" asp-action="SingleItem"><img src="~/images/cloth.jpg" alt="" class="img-responsive" /></a>
+            </figure>
+            <div class="mdl-card__supporting-text">
+                <p>Flying Machine Skinny Women's Blue Jeans</p>
+                <span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </span><br />
+                <span>
+                    <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                </span>
+
+            </div>
+            <div class="mdl-card__actions mdl-card--border text-center">
+
+                <!-- Left aligned menu on top of button  -->
+                <button id="share1"
+                        class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                    <i class="material-icons">share</i>
+                </button>
+
+                <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                    data-mdl-for="share1">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+
+                <span class="mdl-chip mdl-chip--contact center-block">
+                    <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                </span>
+                <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+            </div>
+            <div class="mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">favorite</i>
+                </button>
+            </div>
+        </div>
+
+        <div class="mdl-card mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+            <figure class="mdl-card__media">
+                <img src="~/images/cloth.jpg" alt="" class="img-responsive" />
+            </figure>
+            <div class="mdl-card__supporting-text">
+                <p>Flying Machine Skinny Women's Blue Jeans</p>
+                <span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </span><br />
+                <span>
+                    <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                </span>
+
+            </div>
+            <div class="mdl-card__actions mdl-card--border text-center">
+
+                <!-- Left aligned menu on top of button  -->
+                <button id="share2"
+                        class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                    <i class="material-icons">share</i>
+                </button>
+
+                <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                    data-mdl-for="share2">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+                <span class="mdl-chip mdl-chip--contact center-block">
+                    <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                </span>
+                <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+            </div>
+            <div class="mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">favorite</i>
+                </button>
+            </div>
+        </div>
+        <div class="mdl-card mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+            <figure class="mdl-card__media">
+                <img src="~/images/cloth.jpg" alt="" class="img-responsive" />
+            </figure>
+            <div class="mdl-card__supporting-text">
+                <p>Flying Machine Skinny Women's Blue Jeans</p>
+                <span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </span><br />
+                <span>
+                    <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                </span>
+
+            </div>
+            <div class="mdl-card__actions mdl-card--border text-center">
+
+                <!-- Left aligned menu on top of button  -->
+                <button id="share3"
+                        class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                    <i class="material-icons">share</i>
+                </button>
+
+                <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                    data-mdl-for="share3">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+                <span class="mdl-chip mdl-chip--contact center-block">
+                    <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                </span>
+                <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+            </div>
+            <div class="mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">favorite</i>
+                </button>
+            </div>
+        </div>
+        <div class="mdl-card mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+            <figure class="mdl-card__media">
+                <img src="~/images/cloth.jpg" alt="" class="img-responsive" />
+            </figure>
+            <div class="mdl-card__supporting-text">
+                <p>Flying Machine Skinny Women's Blue Jeans</p>
+                <span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </span><br />
+                <span>
+                    <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                </span>
+
+            </div>
+            <div class="mdl-card__actions mdl-card--border text-center">
+
+                <!-- Left aligned menu on top of button  -->
+                <button id="share4"
+                        class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                    <i class="material-icons">share</i>
+                </button>
+
+                <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                    data-mdl-for="share4">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+                <span class="mdl-chip mdl-chip--contact center-block">
+                    <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                </span>
+                <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+            </div>
+            <div class="mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">favorite</i>
+                </button>
+            </div>
+        </div>
+        <div class="mdl-card mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+            <figure class="mdl-card__media">
+                <img src="~/images/cloth.jpg" alt="" class="img-responsive" />
+            </figure>
+            <div class="mdl-card__supporting-text">
+                <p>Flying Machine Skinny Women's Blue Jeans</p>
+                <span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </span><br />
+                <span>
+                    <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                </span>
+
+            </div>
+            <div class="mdl-card__actions mdl-card--border text-center">
+
+                <!-- Left aligned menu on top of button  -->
+                <button id="share5"
+                        class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                    <i class="material-icons">share</i>
+                </button>
+
+                <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                    data-mdl-for="share5">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+                <span class="mdl-chip mdl-chip--contact center-block">
+                    <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                </span>
+                <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+            </div>
+            <div class="mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">favorite</i>
+                </button>
+            </div>
+        </div>
+        <div class="mdl-card mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+            <figure class="mdl-card__media">
+                <img src="~/images/cloth.jpg" alt="" class="img-responsive" />
+            </figure>
+            <div class="mdl-card__supporting-text">
+                <p>Flying Machine Skinny Women's Blue Jeans</p>
+                <span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </span><br />
+                <span>
+                    <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                </span>
+
+            </div>
+            <div class="mdl-card__actions mdl-card--border text-center">
+
+                <!-- Left aligned menu on top of button  -->
+                <button id="share6"
+                        class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                    <i class="material-icons">share</i>
+                </button>
+
+                <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                    data-mdl-for="share6">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+                <span class="mdl-chip mdl-chip--contact center-block">
+                    <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                    <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                </span>
+                <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+            </div>
+            <div class="mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">favorite</i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="parallax-world-of-ugg">
+    <section>
+        <div class="mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                <div class="parallax-one">
+                    <div class="text-center">
+                        <h3 class="mdl-typography--text-uppercase mdl-typography--font-thin mdl-color-text--white">
+                            Winter Sales<br />
+                            <Strong>Buy 2 get 1 free</Strong>
+                        </h3>
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--3-col">
+                                <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                            </div>
+                            <div class="mdl-cell mdl-cell--3-col">
+                                <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                            </div>
+                            <div class="mdl-cell mdl-cell--3-col">
+                                <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                            </div>
+                            <div class="mdl-cell mdl-cell--3-col">
+                                <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                            </div>
+                        </div>
+
+
+
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                            VIEW ALL PRODUCT
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                <div style="background-color: rgb(63, 81, 181); width: 100%; height: 100%; padding-top: 200px;padding-bottom: 200px;">
+
+                    <div class="text-center">
+                        <h3 class="mdl-typography--text-uppercase mdl-typography--font-thin mdl-color-text--white">
+                            New Collections
+                        </h3>
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--3-col">
+                                <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                            </div>
+                            <div class="mdl-cell mdl-cell--3-col">
+                                <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                            </div>
+                            <div class="mdl-cell mdl-cell--3-col">
+                                <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                            </div>
+                            <div class="mdl-cell mdl-cell--3-col">
+                                <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                            </div>
+                        </div>
+
+
+
+
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                            VIEW ALL PRODUCT
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@Html.Partial("PartialAddToCartView");
+
+
+

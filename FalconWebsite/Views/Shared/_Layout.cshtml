@@ -1,0 +1,339 @@
+﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - FalconWebsite</title>
+    <link rel="shortcut icon" href="~/images/transfeteLogo.png" type="image/png" />
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="~/lib/googleMaterialDesignLite/material.indigo-pink.min.css" rel="stylesheet" />
+        <link href="~/fonts/fonts.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="~/lib/googleMaterialDesignLite/material.indigo-pink.min.css" rel="stylesheet" />
+        <link href="~/fonts/fonts.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    @Html.Raw(JavaScriptSnippet.FullScript)
+
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="~/node_modules/core-js/client/shim.min.js"></script>
+
+    <script src="~/node_modules/zone.js/dist/zone.js"></script>
+    <script src="~/node_modules/systemjs/dist/system.src.js"></script>
+
+
+    <script src="~/js/systemjs.config.js"></script>
+    <script>
+        System.import('/app/main.js').catch(function (err) { console.error(err); });
+    </script>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/googleMaterialDesignLite/material.min.js"></script>
+
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/googleMaterialDesignLite/material.min.js"></script>
+
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+
+
+    @RenderSection("Scripts", required: false)
+
+
+</head>
+<body>
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+        <header class="mdl-layout__header mdl-layout__header--waterfall">
+            <!-- Top row, always visible -->
+            <div class="mdl-layout__header-row mdl-layout__header">
+                <span class="mdl-layout-title"><strong>FeteBird</strong><img src="~/images/transfeteBirdLogo.png" width="50" height="50" /></span>
+
+                <!-- Displayed on Computer and Tablet -->
+                <!-- Search -->
+                <div class="mdh-expandable-search mdl-cell--hide-phone">
+                    <form>
+                        <input type="text" placeholder="Search for Product , Brands ..">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="background: #009688; height: 40px;">
+                            <i class="material-icons" style="color: white">search</i>
+                        </button>
+
+                    </form>
+                </div>
+
+
+                <div class="mdl-layout-spacer mdl-cell--hide-tablet mdl-cell--hide-desktop"></div>
+                <div class="mdl-cell--hide-tablet mdl-cell--hide-desktop mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+                    <label class="mdl-button mdl-js-button mdl-button--icon"
+                           for="waterfall-exp">
+                        <i class="material-icons">search</i>
+                    </label>
+                    <div class="mdl-textfield__expandable-holder">
+                        <input class="mdl-textfield__input" type="text" name="sample"
+                               id="waterfall-exp">
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <!-- Right aligned menu below button -->
+                <button id="demo-menu-lower-right"
+                        class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">more_vert</i>
+                </button>
+
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                    for="demo-menu-lower-right">
+                    <li class="mdl-menu__item">Mobile App</li>
+                    <li class="mdl-menu__item">Customer Care</li>
+                    <li class="mdl-menu__item">Track Order</li>
+                    <li class="mdl-menu__item">Log in</li>
+                </ul>
+            </div>
+            <!-- Bottom row, not visible on scroll -->
+            <div class="mdl-layout__header-row mdl-cell--hide-phone mdl-cell--hide-tablet" style="height: 35px; justify-content: center">
+                <!-- Navigation -->
+                <nav class="mdl-navigation">
+
+                    <span class="mdl-navigation__link">
+                        Men
+                        <!-- Left aligned menu below button -->
+                        <button id="men-menu-lower-left"
+                                class="mdl-button mdl-js-button mdl-button--icon" onmouseover="this.click()">
+                            <i class="material-icons">keyboard_arrow_down</i>
+                        </button>
+                        <ul class="category-list mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                            for="men-menu-lower-left">
+                            <li class="mdl-menu__item">Civic Duty</li>
+                            <li class="mdl-menu__item">Leadership</li>
+                            <li class="mdl-menu__item">Economy</li>
+                            <li class="mdl-menu__item">Taxes</li>
+                            <li class="mdl-menu__item">Energy</li>
+                            <li class="mdl-menu__item">Education</li>
+                            <li class="mdl-menu__item">Environment</li>
+                            <li class="mdl-menu__item">Public Safety</li>
+                            <li class="mdl-menu__item">Healthcare</li>
+                            <li class="mdl-menu__item">Social Policy</li>
+                            <li class="mdl-menu__item">International Affairs</li>
+                            <li class="mdl-menu__item">Other</li>
+                        </ul>
+                    </span>
+                    <span class="mdl-navigation__link" href="">
+                        Women
+                        <!-- Left aligned menu below button -->
+                        <button id="women-menu-lower-left"
+                                class="mdl-button mdl-js-button mdl-button--icon" onmouseover="this.click()">
+                            <i class="material-icons">keyboard_arrow_down</i>
+                        </button>
+                        <ul class="category-list mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                            for="women-menu-lower-left">
+                            <li class="mdl-menu__item">Civic Duty</li>
+                            <li class="mdl-menu__item">Leadership</li>
+                            <li class="mdl-menu__item">Economy</li>
+                            <li class="mdl-menu__item">Taxes</li>
+                            <li class="mdl-menu__item">Energy</li>
+                            <li class="mdl-menu__item">Education</li>
+                            <li class="mdl-menu__item">Environment</li>
+                            <li class="mdl-menu__item">Public Safety</li>
+                            <li class="mdl-menu__item">Healthcare</li>
+                            <li class="mdl-menu__item">Social Policy</li>
+                            <li class="mdl-menu__item">International Affairs</li>
+                            <li class="mdl-menu__item">Other</li>
+                        </ul>
+                    </span>
+
+                </nav>
+            </div>
+        </header>
+
+        <div class="mdl-layout__drawer mdl-layout--large-screen-only">
+            <span class="mdl-layout-title"><img src="~/images/transfeteBirdLogo.png" width="80" height="80" /></span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Link21</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
+        </div>
+        <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+            <span class="mdl-layout-title"><img src="~/images/transfeteBirdLogo.png" width="80" height="80" /></span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Link11</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+
+
+
+            <div class="page-content">@RenderBody()</div>
+
+            <footer class="mdl-mega-footer oxy-color-primary">
+                <div class="mdl-mega-footer--middle-section">
+                    <div class="mdl-mega-footer--drop-down-section">
+                        <input class="mdl-mega-footer--heading-checkbox" checked="" type="checkbox">
+                        <h1 class="mdl-mega-footer--heading">About Fab</h1>
+                        <div class="mdl-mega-footer__widget">
+                            <p>Material Design Lite lets you add a Material Design look and feel to your websites. It doesn’t rely on any JavaScript frameworks and aims to optimize for cross-device use.</p>
+                            <p>An emphasis on user actions makes core functionality immediately apparent and provides waypoints for the user.</p>
+                        </div>
+                        <h3 class="mdl-mega-footer--heading">Payments</h3>
+                        <div class="mdl-mega-footer__widget">
+                            <i class="material-icons">credit_card</i> &nbsp; 
+                            <i class="material-icons">credit_card</i> &nbsp;
+                            <i class="material-icons">credit_card</i> &nbsp; 
+                            <i class="material-icons">credit_card</i> &nbsp;
+                            <i class="material-icons">credit_card</i> &nbsp;
+                            <i class="material-icons">credit_card</i>
+                        </div>
+                    </div>
+                    <div class="mdl-mega-footer--drop-down-section">
+                        <input class="mdl-mega-footer--heading-checkbox" checked="" type="checkbox">
+                        <h1 class="mdl-mega-footer--heading">Open Hours</h1>
+
+                        <ul class="demo-list-control mdl-list">
+                            <li class="mdl-list__item mdl-color-text--white">
+                                <span class="mdl-list__item-primary-content">
+                                    Monday
+                                </span>
+                                <span class="mdl-list__item-secondary-action">
+                                    <span>10:00 - 20:00</span>
+                                </span>
+                            </li>
+                            <li class="mdl-list__item mdl-color-text--white">
+                                <span class="mdl-list__item-primary-content">
+                                    Tuesday
+                                </span>
+                                <span class="mdl-list__item-secondary-action">
+                                    <span>12:00 - 21:00</span>
+                                </span>
+                            </li>
+                            <li class="mdl-list__item mdl-color-text--white">
+                                <span class="mdl-list__item-primary-content">
+                                    Wednesday
+                                </span>
+                                <span class="mdl-list__item-secondary-action">
+                                    <span>10:00 - 20:00</span>
+                                </span>
+                            </li>
+                            <li class="mdl-list__item mdl-color-text--white">
+                                <span class="mdl-list__item-primary-content">
+                                    Thursday
+                                </span>
+                                <span class="mdl-list__item-secondary-action">
+                                    <span>10:00 - 20:00</span>
+                                </span>
+                            </li>
+                            <li class="mdl-list__item mdl-color-text--white">
+                                <span class="mdl-list__item-primary-content">
+                                    Friday
+                                </span>
+                                <span class="mdl-list__item-secondary-action">
+                                    <span>10:00 - 20:00</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mdl-mega-footer--drop-down-section">
+                        <input class="mdl-mega-footer--heading-checkbox" checked="" type="checkbox">
+                        <h1 class="mdl-mega-footer--heading">Latest Products</h1>
+                        <div class="mdl-mega-footer__widget">
+                            <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--3-col">
+                                    <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                                </div>
+                                <div class="mdl-cell mdl-cell--3-col">
+                                    <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                                </div>
+                                <div class="mdl-cell mdl-cell--3-col">
+                                    <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                                </div>
+                                <div class="mdl-cell mdl-cell--3-col">
+                                    <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                                </div>
+                            </div>
+                            <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--3-col">
+                                    <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                                </div>
+                                <div class="mdl-cell mdl-cell--3-col">
+                                    <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                                </div>
+                                <div class="mdl-cell mdl-cell--3-col">
+                                    <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                                </div>
+                                <div class="mdl-cell mdl-cell--3-col">
+                                    <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                                </div>
+                            </div>
+                            <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--3-col">
+                                    <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                                </div>
+                                <div class="mdl-cell mdl-cell--3-col">
+                                    <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                                </div>
+                                <div class="mdl-cell mdl-cell--3-col">
+                                    <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                                </div>
+                                <div class="mdl-cell mdl-cell--3-col">
+                                    <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdl-mega-footer--drop-down-section">
+                        <input class="mdl-mega-footer--heading-checkbox" checked="" type="checkbox">
+                        <h1 class="mdl-mega-footer--heading">Our Store</h1>
+                        <div class="mdl-mega-footer__widget">
+                            <p>Contact us any time, we would love to hear from you.</p>
+                            <p>Birmingham Bulring<br>MSU 8-9, Levels 7&amp;9<br>Birmingham B5 4BG<br>(44) 121 616 2169<br></p>
+                            <p><a href="#">fab.com</a><br>info@fab.com</p>
+                            <p>
+                                <a href="#" class="mdl-button mdl-js-button mdl-button--icon" data-upgraded=",MaterialButton"><img src="~/images/FileUploads/winter.jpg" /></a>
+                                <a href="#" class="mdl-button mdl-js-button mdl-button--icon" data-upgraded=",MaterialButton"><img src="~/images/FileUploads/winter.jpg" /></a>
+                                <a href="#" class="mdl-button mdl-js-button mdl-button--icon" data-upgraded=",MaterialButton"><img src="~/images/FileUploads/winter.jpg" /></a>
+                                <a href="#" class="mdl-button mdl-js-button mdl-button--icon" data-upgraded=",MaterialButton"><img src="~/images/FileUploads/winter.jpg" /></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-mega-footer--bottom-section">
+                    <div class="mdl-logo">Fab</div>
+                    <ul class="mdl-mega-footer--link-list">
+                        <li>
+                            <a href="page-card.html">Conditions</a>
+                        </li>
+                        <li>
+                            <a href="page-card.html">Help</a>
+                        </li>
+                        <li><a href="page-card.html">Privacy</a></li>
+                        <li>
+                            <a href="page-card.html">Terms</a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,738 @@
+
+@{
+    ViewData["Title"] = "Multiple";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/ProjectCss/HomePageCustomeCss.css" rel="stylesheet" />
+
+
+
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--2-col mdl-layout--large-screen-only">
+        <nav>
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Filter</div>
+
+                <!-- List group -->
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="#" id="btn-1" data-toggle="collapse" data-target="#submenu1" aria-expanded="false" class="mdl-button mdl-js-button mdl-js-ripple-effect">Link 2 (toggle)</a>
+                        <ul class="nav collapse" id="submenu1" role="menu" aria-labelledby="btn-1">
+                            <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                    Bryan Cranston
+                                </span>
+                                <span class="mdl-list__item-secondary-action">
+                                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="list-switch-1">
+                                        <input type="checkbox" id="list-switch-1" class="mdl-switch__input" checked />
+                                    </label>
+                                </span>
+
+                            </li>
+
+                            <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                    Bryan Cranston
+                                </span>
+                                <span class="mdl-list__item-secondary-action">
+                                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="list-switch-1">
+                                        <input type="checkbox" id="list-switch-1" class="mdl-switch__input" checked />
+                                    </label>
+                                </span>
+
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+            </div>
+
+
+        </nav>
+    </div>
+    <div class="mdl-cell mdl-cell--10-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+        <div class="mdl-card mdl-cell mdl-shadow--2dp" style="width: 100%">
+            <div class="mdl-card__actions" style="position: relative; top: 18px">
+                <ol class="breadcrumb pull-left">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                    <li class="breadcrumb-item active">Data</li>
+                </ol>
+                <span class="pull-right">
+                    Showing 14 products of 100
+
+                   
+
+                    <button id="filterSort"
+                            class="mdl-button mdl-js-button mdl-button--icon">
+                        <i class="material-icons">filter_list</i>
+                    </button>
+
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                        for="filterSort">
+                        <li class="mdl-menu__item">Sort by Popularity</li>
+                        <li class="mdl-menu__item">Sort By Date</li>
+                        <li class="mdl-menu__item">Sort By Price Asc</li>
+                        <li class="mdl-menu__item">Sort By Price Desc</li>
+                        <li class="mdl-menu__item">Sort By Gender</li>
+                    </ul>
+
+                </span>
+            </div>
+            <hr class="star-primary">
+            <div class="mdl-grid">
+                <div class="mdl-card mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+                    <figure class="mdl-card__media">
+                        <a asp-controller="SingleItem" asp-action="SingleItem"><img src="~/images/cloth.jpg" alt="" class="img-responsive" /></a>
+                    </figure>
+                    <div class="mdl-card__supporting-text">
+                        <p>Flying Machine Skinny Women's Blue Jeans</p>
+                        <span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </span><br />
+                        <span>
+                            <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                        </span>
+
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border text-center">
+
+                        <!-- Left aligned menu on top of button  -->
+                        <button id="share1"
+                                class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                            <i class="material-icons">share</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                            data-mdl-for="share1">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+
+                        <span class="mdl-chip mdl-chip--contact center-block">
+                            <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                            <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                        </span>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+                    </div>
+                    <div class="mdl-card__menu">
+                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">favorite</i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mdl-card mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+                    <figure class="mdl-card__media">
+                        <img src="~/images/cloth.jpg" alt="" class="img-responsive" />
+                    </figure>
+                    <div class="mdl-card__supporting-text">
+                        <p>Flying Machine Skinny Women's Blue Jeans</p>
+                        <span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </span><br />
+                        <span>
+                            <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                        </span>
+
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border text-center">
+
+                        <!-- Left aligned menu on top of button  -->
+                        <button id="share2"
+                                class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                            <i class="material-icons">share</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                            data-mdl-for="share2">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                        <span class="mdl-chip mdl-chip--contact center-block">
+                            <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                            <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                        </span>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+                    </div>
+                    <div class="mdl-card__menu">
+                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">favorite</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+                    <figure class="mdl-card__media">
+                        <img src="~/images/cloth.jpg" alt="" class="img-responsive" />
+                    </figure>
+                    <div class="mdl-card__supporting-text">
+                        <p>Flying Machine Skinny Women's Blue Jeans</p>
+                        <span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </span><br />
+                        <span>
+                            <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                        </span>
+
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border text-center">
+
+                        <!-- Left aligned menu on top of button  -->
+                        <button id="share3"
+                                class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                            <i class="material-icons">share</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                            data-mdl-for="share3">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                        <span class="mdl-chip mdl-chip--contact center-block">
+                            <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                            <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                        </span>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+                    </div>
+                    <div class="mdl-card__menu">
+                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">favorite</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+                    <figure class="mdl-card__media">
+                        <img src="~/images/cloth.jpg" alt="" class="img-responsive" />
+                    </figure>
+                    <div class="mdl-card__supporting-text">
+                        <p>Flying Machine Skinny Women's Blue Jeans</p>
+                        <span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </span><br />
+                        <span>
+                            <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                        </span>
+
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border text-center">
+
+                        <!-- Left aligned menu on top of button  -->
+                        <button id="share4"
+                                class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                            <i class="material-icons">share</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                            data-mdl-for="share4">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                        <span class="mdl-chip mdl-chip--contact center-block">
+                            <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                            <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                        </span>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+                    </div>
+                    <div class="mdl-card__menu">
+                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">favorite</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="mdl-grid">
+                <div class="mdl-card mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+                    <figure class="mdl-card__media">
+                        <a asp-controller="SingleItem" asp-action="SingleItem"><img src="~/images/cloth.jpg" alt="" class="img-responsive" /></a>
+                    </figure>
+                    <div class="mdl-card__supporting-text">
+                        <p>Flying Machine Skinny Women's Blue Jeans</p>
+                        <span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </span><br />
+                        <span>
+                            <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                        </span>
+
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border text-center">
+
+                        <!-- Left aligned menu on top of button  -->
+                        <button id="share1"
+                                class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                            <i class="material-icons">share</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                            data-mdl-for="share1">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+
+                        <span class="mdl-chip mdl-chip--contact center-block">
+                            <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                            <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                        </span>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+                    </div>
+                    <div class="mdl-card__menu">
+                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">favorite</i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mdl-card mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+                    <figure class="mdl-card__media">
+                        <img src="~/images/cloth.jpg" alt="" class="img-responsive" />
+                    </figure>
+                    <div class="mdl-card__supporting-text">
+                        <p>Flying Machine Skinny Women's Blue Jeans</p>
+                        <span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </span><br />
+                        <span>
+                            <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                        </span>
+
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border text-center">
+
+                        <!-- Left aligned menu on top of button  -->
+                        <button id="share2"
+                                class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                            <i class="material-icons">share</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                            data-mdl-for="share2">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                        <span class="mdl-chip mdl-chip--contact center-block">
+                            <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                            <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                        </span>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+                    </div>
+                    <div class="mdl-card__menu">
+                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">favorite</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+                    <figure class="mdl-card__media">
+                        <img src="~/images/cloth.jpg" alt="" class="img-responsive" />
+                    </figure>
+                    <div class="mdl-card__supporting-text">
+                        <p>Flying Machine Skinny Women's Blue Jeans</p>
+                        <span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </span><br />
+                        <span>
+                            <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                        </span>
+
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border text-center">
+
+                        <!-- Left aligned menu on top of button  -->
+                        <button id="share3"
+                                class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                            <i class="material-icons">share</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                            data-mdl-for="share3">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                        <span class="mdl-chip mdl-chip--contact center-block">
+                            <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                            <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                        </span>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+                    </div>
+                    <div class="mdl-card__menu">
+                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">favorite</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+                    <figure class="mdl-card__media">
+                        <img src="~/images/cloth.jpg" alt="" class="img-responsive" />
+                    </figure>
+                    <div class="mdl-card__supporting-text">
+                        <p>Flying Machine Skinny Women's Blue Jeans</p>
+                        <span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </span><br />
+                        <span>
+                            <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                        </span>
+
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border text-center">
+
+                        <!-- Left aligned menu on top of button  -->
+                        <button id="share4"
+                                class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                            <i class="material-icons">share</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                            data-mdl-for="share4">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                        <span class="mdl-chip mdl-chip--contact center-block">
+                            <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                            <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                        </span>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+                    </div>
+                    <div class="mdl-card__menu">
+                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">favorite</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="mdl-grid">
+                <div class="mdl-card mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+                    <figure class="mdl-card__media">
+                        <a asp-controller="SingleItem" asp-action="SingleItem"><img src="~/images/cloth.jpg" alt="" class="img-responsive" /></a>
+                    </figure>
+                    <div class="mdl-card__supporting-text">
+                        <p>Flying Machine Skinny Women's Blue Jeans</p>
+                        <span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </span><br />
+                        <span>
+                            <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                        </span>
+
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border text-center">
+
+                        <!-- Left aligned menu on top of button  -->
+                        <button id="share1"
+                                class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                            <i class="material-icons">share</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                            data-mdl-for="share1">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+
+                        <span class="mdl-chip mdl-chip--contact center-block">
+                            <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                            <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                        </span>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+                    </div>
+                    <div class="mdl-card__menu">
+                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">favorite</i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mdl-card mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+                    <figure class="mdl-card__media">
+                        <img src="~/images/cloth.jpg" alt="" class="img-responsive" />
+                    </figure>
+                    <div class="mdl-card__supporting-text">
+                        <p>Flying Machine Skinny Women's Blue Jeans</p>
+                        <span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </span><br />
+                        <span>
+                            <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                        </span>
+
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border text-center">
+
+                        <!-- Left aligned menu on top of button  -->
+                        <button id="share2"
+                                class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                            <i class="material-icons">share</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                            data-mdl-for="share2">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                        <span class="mdl-chip mdl-chip--contact center-block">
+                            <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                            <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                        </span>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+                    </div>
+                    <div class="mdl-card__menu">
+                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">favorite</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+                    <figure class="mdl-card__media">
+                        <img src="~/images/cloth.jpg" alt="" class="img-responsive" />
+                    </figure>
+                    <div class="mdl-card__supporting-text">
+                        <p>Flying Machine Skinny Women's Blue Jeans</p>
+                        <span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </span><br />
+                        <span>
+                            <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                        </span>
+
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border text-center">
+
+                        <!-- Left aligned menu on top of button  -->
+                        <button id="share3"
+                                class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                            <i class="material-icons">share</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                            data-mdl-for="share3">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                        <span class="mdl-chip mdl-chip--contact center-block">
+                            <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                            <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                        </span>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+                    </div>
+                    <div class="mdl-card__menu">
+                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">favorite</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-shadow--2dp demo-card-square">
+                    <figure class="mdl-card__media">
+                        <img src="~/images/cloth.jpg" alt="" class="img-responsive" />
+                    </figure>
+                    <div class="mdl-card__supporting-text">
+                        <p>Flying Machine Skinny Women's Blue Jeans</p>
+                        <span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </span><br />
+                        <span>
+                            <strong style="color: rgb(63, 81, 181);">Npr-429 </strong><del disabled>Npr-899</del> <span style="color: rgb(0, 150, 136);">52% off</span>
+                        </span>
+
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border text-center">
+
+                        <!-- Left aligned menu on top of button  -->
+                        <button id="share4"
+                                class="mdl-button mdl-js-button mdl-button--icon pull-left">
+                            <i class="material-icons">share</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+                            data-mdl-for="share4">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                        <span class="mdl-chip mdl-chip--contact center-block">
+                            <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">12</span>
+                            <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">thumb_up</i></button>
+                        </span>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored pull-right"><i class="material-icons">add_shopping_cart</i></button>
+                    </div>
+                    <div class="mdl-card__menu">
+                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">favorite</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<nav aria-label="Page navigation example" class="text-center">
+    <ul class="pagination">
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+<div id="parallax-world-of-ugg">
+    <section>
+        <div class="mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                <div class="parallax-one">
+                    <div class="text-center">
+                        <h3 class="mdl-typography--text-uppercase mdl-typography--font-thin mdl-color-text--white">
+                            Winter Sales<br />
+                            <Strong>Buy 2 get 1 free</Strong>
+                        </h3>
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--3-col">
+                                <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                            </div>
+                            <div class="mdl-cell mdl-cell--3-col">
+                                <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                            </div>
+                            <div class="mdl-cell mdl-cell--3-col">
+                                <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                            </div>
+                            <div class="mdl-cell mdl-cell--3-col">
+                                <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                            </div>
+                        </div>
+
+
+
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                            VIEW ALL PRODUCT
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                <div style="background-color: rgb(63, 81, 181); width: 100%; height: 100%; padding-top: 200px;padding-bottom: 200px;">
+
+                    <div class="text-center">
+                        <h3 class="mdl-typography--text-uppercase mdl-typography--font-thin mdl-color-text--white">
+                            New Collections
+                        </h3>
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--3-col">
+                                <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                            </div>
+                            <div class="mdl-cell mdl-cell--3-col">
+                                <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                            </div>
+                            <div class="mdl-cell mdl-cell--3-col">
+                                <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                            </div>
+                            <div class="mdl-cell mdl-cell--3-col">
+                                <img src="~/images/FileUploads/imageTest.jpg" class="img-responsive img-rounded" />
+                            </div>
+                        </div>
+
+
+
+
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                            VIEW ALL PRODUCT
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+@Html.Partial("PartialAddToCartView")
+

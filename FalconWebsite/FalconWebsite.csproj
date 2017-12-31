@@ -1,0 +1,85 @@
+﻿<Project ToolsVersion="15.0" Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="node_modules\**" />
+    <Compile Remove="wwwroot\node_modules\**" />
+    <Content Remove="node_modules\**" />
+    <Content Remove="wwwroot\node_modules\**" />
+    <EmbeddedResource Remove="node_modules\**" />
+    <EmbeddedResource Remove="wwwroot\node_modules\**" />
+    <None Remove="node_modules\**" />
+    <None Remove="wwwroot\node_modules\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Properties\PublishProfiles\FalconWebsite20170204094000 - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\FalconWebsiteDev - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\FeteBird - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\FeteBirdDev - Web Deploy.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+  <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+</ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Views\Admin\" />
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="Views\Checkout\" />
+    <Folder Include="wwwroot\app\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\js\KnockoutViewModel\CategoryViewModel.js" />
+    <None Include="wwwroot\js\KnockoutViewModel\ItemColorsViewModel.js" />
+    <None Include="wwwroot\js\KnockoutViewModel\ItemsViewModel.js" />
+    <None Include="wwwroot\js\KnockoutViewModel\LoginAuthentication.js" />
+    <None Include="wwwroot\js\KnockoutViewModel\SubCategoryTwoViewModel.js" />
+    <None Include="wwwroot\js\KnockoutViewModel\SubCategoryViewModal.js" />
+    <None Include="wwwroot\js\ProjectJquery\SingleItemJquery.js" />
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\js\site.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-colorpicker.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-colorpicker.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap-colorpicker.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap-select.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap-toggle.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\npm.js" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\Color\color_classifier.js" />
+    <None Include="wwwroot\lib\Color\dataset.js" />
+    <None Include="wwwroot\lib\googleMaterialDesignLite\material.min.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+    <None Include="wwwroot\lib\jquery\dist\Jquerymask.js" />
+    <None Include="wwwroot\lib\knockout\KnockoutFileUpload.js" />
+    <None Include="wwwroot\lib\knockout\Knockoutv3.4.1.js" />
+  </ItemGroup>
+</Project>

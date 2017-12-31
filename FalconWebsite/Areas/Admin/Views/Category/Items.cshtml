@@ -1,0 +1,354 @@
+﻿
+@{
+    ViewData["Title"] = "Items";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .colorpicker-2x .colorpicker-saturation {
+        width: 200px;
+        height: 200px;
+    }
+
+    .colorpicker-2x .colorpicker-hue,
+    .colorpicker-2x .colorpicker-alpha {
+        width: 30px;
+        height: 200px;
+    }
+
+    .colorpicker-2x .colorpicker-color,
+    .colorpicker-2x .colorpicker-color div {
+        height: 30px;
+    }
+</style>
+
+    <div id="itemMainPage">
+        <div class="modal fade modal-fullscreen" id="fullModalItems" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn btn-default" style="float: right" data-dismiss="modal" aria-hidden="true">Close</button>
+                        <h4 class="modal-title">Item Setting </h4>
+                    </div>
+                    <div class="modal-body" id="colorFullModalDialog">
+
+                        <div class="tabbable-panel container">
+                            <div class="tabbable-line" id="myTabs">
+                                <ul class="nav nav-tabs ">
+                                    <li role="presentation" class="active">
+                                        <a href="#tab_size" role="tab" data-toggle="tab">
+                                            Size
+                                        </a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a href="@Url.Action("PartialItemColor", "Category")" data-target="#tab_color" role="tab" data-toggle="tab">
+                                            Color
+                                        </a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a href="#tab_type" role="tab" data-toggle="tab">
+                                            Type
+                                        </a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a href="#tab_gender" role="tab" data-toggle="tab">
+                                            Gender
+                                        </a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a href="@Url.Action("PartialItemVendor", "Category")" data-target="#tab_vender" role="tab" data-toggle="tab">
+                                            Vender
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="LoadingImage" class="centeredImage" style='display: none;'>
+                                        <img src="~/images/loading.gif" />
+                                    </div>
+                                    <div class="tab-pane active" id="tab_size">
+
+
+                                    </div>
+                                    <div class="tab-pane" id="tab_type">
+
+
+                                    </div>
+                                    <div class="tab-pane" id="tab_color">
+
+                                    </div>
+                                    <div class="tab-pane" id="tab_gender">
+
+                                        <button class="btn btn-primary btn-circle btn-lg" style="float: right" title="Add Gender" data-placement="top">
+                                            <i class="glyphicon glyphicon-plus">
+                                            </i>
+                                        </button>
+                                    </div>
+
+                                    <div class="tab-pane" id="tab_vender">
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+        <div class="floaty" style="position: fixed;">
+            <ul class="floaty-list">
+                <li class="floaty-list-item floaty-list-item--blue" data-toggle="modal" data-target="#fullModalItems">
+                    <span class="floaty-list-item-label">Settings</span>
+                    <span class="glyphicon glyphicon-cog" style="left: 12px; top: 12px;"></span>
+                </li>
+                <li class="floaty-list-item floaty-list-item--yellow">
+                    <span class="floaty-list-item-label">Add items</span>
+                    <span class="glyphicon glyphicon-plus" style="left: 14px; top: 12px;" data-toggle="modal" data-target="#exampleModal"></span>
+                </li>
+            </ul>
+            <div class="btn btn-primary btn-circle btn-lg ">
+                <i class="glyphicon glyphicon-align-justify" style="right: 2px; top: 4px;">
+                </i>
+
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Items</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form>
+
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    <span for="inputPassword" class="col-sm-4 col-form-label">Category</span>
+                                    <div class="col-sm-8">
+                                        <select class="form-control form-control-sm">
+                                            <option>Small select</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <span for="inputPassword" class="col-sm-4 col-form-label">Sub Category</span>
+                                    <div class="col-sm-8">
+                                        <select class="form-control form-control-sm">
+                                            <option>Small select</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <span for="inputPassword" class="col-sm-4 ">Second Category</span>
+                                    <div class="col-sm-8">
+                                        <select class="form-control form-control-sm">
+                                            <option>Small select</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <span for="staticEmail" class="col-sm-2 col-form-label">Product Name</span>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="staticEmail" value="email@example.com">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <span for="inputPassword" class="col-sm-2 col-form-label">Product Description</span>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <span for="inputPassword" class="col-sm-2 col-form-label">Product Size</span>
+                                <div class="col-sm-10">
+                                    <select class="form-control form-control-sm">
+                                        <option>Small select</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <span for="inputPassword" class="col-sm-2 col-form-label">Price one</span>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="staticEmail" value="email@example.com">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <span for="inputPassword" class="col-sm-2 col-form-label">Price Second</span>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="staticEmail" value="email@example.com">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <span for="inputPassword" class="col-sm-2 col-form-label">Discount Rate</span>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="staticEmail" value="email@example.com">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <span for="inputPassword" class="col-sm-2 col-form-label">Product Color</span>
+                                <div class="col-sm-10">
+                                    <select class="form-control form-control-sm">
+                                        <option>Small select</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            @*<div class="form-group">
+                                <span class="control-label col-sm-4">Image 1</span>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <!-- image-preview-filename input [CUT FROM HERE]-->
+                                        <div class="input-group image-preview">
+                                            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                            <span class="input-group-btn">
+                                                <!-- image-preview-clear button -->
+                                                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                    <span class="glyphicon glyphicon-remove"></span> Clear
+                                                </button>
+                                                <!-- image-preview-input -->
+                                                <div class="btn btn-default image-preview-input">
+                                                    <span class="glyphicon glyphicon-folder-open"></span>
+                                                    <input type="file" id="subCatFile" name="subCatFile" /> <!-- rename it -->
+                                                </div>
+                                            </span>
+                                        </div><!-- /input-group image-preview [TO HERE]-->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <span class="control-label col-sm-4">Image 2</span>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <!-- image-preview-filename input [CUT FROM HERE]-->
+                                        <div class="input-group image-preview">
+                                            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                            <span class="input-group-btn">
+                                                <!-- image-preview-clear button -->
+                                                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                    <span class="glyphicon glyphicon-remove"></span> Clear
+                                                </button>
+                                                <!-- image-preview-input -->
+                                                <div class="btn btn-default image-preview-input">
+                                                    <span class="glyphicon glyphicon-folder-open"></span>
+                                                    <input type="file" id="subCatFile" name="subCatFile" /> <!-- rename it -->
+                                                </div>
+                                            </span>
+                                        </div><!-- /input-group image-preview [TO HERE]-->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <span class="control-label col-sm-4">Image 3</span>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <!-- image-preview-filename input [CUT FROM HERE]-->
+                                        <div class="input-group image-preview">
+                                            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                            <span class="input-group-btn">
+                                                <!-- image-preview-clear button -->
+                                                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                    <span class="glyphicon glyphicon-remove"></span> Clear
+                                                </button>
+                                                <!-- image-preview-input -->
+                                                <div class="btn btn-default image-preview-input">
+                                                    <span class="glyphicon glyphicon-folder-open"></span>
+                                                    <input type="file" id="subCatFile" name="subCatFile" /> <!-- rename it -->
+                                                </div>
+                                            </span>
+                                        </div><!-- /input-group image-preview [TO HERE]-->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <span class="control-label col-sm-4">Image 4</span>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <!-- image-preview-filename input [CUT FROM HERE]-->
+                                        <div class="input-group image-preview">
+                                            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                            <span class="input-group-btn">
+                                                <!-- image-preview-clear button -->
+                                                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                    <span class="glyphicon glyphicon-remove"></span> Clear
+                                                </button>
+                                                <!-- image-preview-input -->
+                                                <div class="btn btn-default image-preview-input">
+                                                    <span class="glyphicon glyphicon-folder-open"></span>
+                                                    <input type="file" id="subCatFile" name="subCatFile" /> <!-- rename it -->
+                                                </div>
+                                            </span>
+                                        </div><!-- /input-group image-preview [TO HERE]-->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        <div class="form-group">
+                            <span class="control-label col-sm-4">Image 5</span>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <!-- image-preview-filename input [CUT FROM HERE]-->
+                                    <div class="input-group image-preview">
+                                        <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                        <span class="input-group-btn">
+                                            <!-- image-preview-clear button -->
+                                            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                <span class="glyphicon glyphicon-remove"></span> Clear
+                                            </button>
+                                            <!-- image-preview-input -->
+                                            <div class="btn btn-default image-preview-input">
+                                                <span class="glyphicon glyphicon-folder-open"></span>
+                                                <input type="file" id="subCatFile" name="subCatFile" /> <!-- rename it -->
+                                            </div>
+                                        </span>
+                                    </div><!-- /input-group image-preview [TO HERE]-->
+                                </div>
+                            </div>
+                        </div>*@
+                            <div class="form-group row">
+                                <span for="inputPassword" class="col-sm-2 col-form-label">Currency</span>
+                                <div class="col-sm-10">
+                                    <select class="form-control form-control-sm">
+                                        <option>Small select</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <span for="inputPassword" class="col-sm-2 col-form-label">Gender</span>
+                                <div class="col-sm-10">
+                                    <select class="form-control form-control-sm">
+                                        <option>Small select</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="~/js/KnockoutViewModel/ItemsViewModel.js"></script>
